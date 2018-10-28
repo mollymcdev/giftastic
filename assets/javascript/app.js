@@ -50,8 +50,8 @@ $(document).on("click", ".food-btn", function () {
 
         for (var j = 0; j < results.length; j++) {
 
-            console.log(results[j]);
-            var gifImg = $("<img>").attr('src', results[j].images.fixed_height_still.url);
+
+            var gifImg = $("<img>").attr('src', results[j].images.fixed_height.url).attr('data-toggle-url', results[j].images.fixed_height_still.url );
             var rating = $("<p>").text('Rating: ' + results[j].rating);
 
             $("#foodDiv").prepend(gifImg);
@@ -59,8 +59,8 @@ $(document).on("click", ".food-btn", function () {
 
             $("#foodDiv").on('click', function() {
 
-                gifImg.html("<img>").attr('src', results[j].images.fixed_height.url);
-                console.log(results.images);
+                gifImg.html("<img>").attr('src', results[j].images.fixed_height_still.url).attr('data-toggle-url', results[j].images.fixed_height.url);
+
 
             });
 
